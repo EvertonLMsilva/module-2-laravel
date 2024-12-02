@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('document');
             $table->date('birthdate')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
