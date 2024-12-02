@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use app\Enum\TransactionStatus;
+use App\Enum\TransactionStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -20,4 +20,9 @@ class Transaction extends Model
     protected $casts = [
         'status' => TransactionStatus::class
     ];
+
+    public function signature()
+    {
+        return $this->belongsTo(Signature::class);
+    }
 }
